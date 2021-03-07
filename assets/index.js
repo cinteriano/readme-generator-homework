@@ -23,27 +23,29 @@ const fs = require('fs');
   .then((data) => {
     console.log(data)
     
-    var html = `<!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document</title>
-    </head>
-    <body>
-
-      <div id="profile">
-        <h2>${data.profilename}</h2>
-        <p> ${data.location}</p>
-        <p> ${data.url}</p>
-      </div>
+    var html = `# ${data.profilename}
+    ** ${data.location}
+    - ${data.url}
+  
+  `
+        
       
-      <script type="text/javascript" src="index.js"></script>
-    </body>
-    </html>`;
+    
   
     fs.writeFile('readme.md', html, function (err) {
         if (err) console.log(err)
       })
   });
+
+
+//   const questions = [];
+
+// // TODO: Create a function to write README file
+// function writeToFile(fileName, data) {}
+
+// // TODO: Create a function to initialize app
+// function init() {}
+
+// // Function call to initialize app
+// init();
+
