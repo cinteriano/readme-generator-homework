@@ -74,15 +74,25 @@ const fs = require('fs');
   .then((data) => {
     console.log(data)
     
-var html = `# ${data.title}
-
-##${data.installation}
-###${data.contributors}
-####${data.licenses}
-#####${data.usage}
-######${data.github}
-*${data.linkedin}
-*${data.email}`
+var html = 
+`# ${data.title}
+*[installation](#installation)
+*[usage](#usage)
+*[contributors](#contributors)
+*[licenses](#licenses)
+# installation
+  ${data.installation}
+  [![video](http://img.youtube.com/vi/3RleY_CKa1s/0.jpg)](http://www.youtube.com/watch?v=3RleY_CKa1s "read me ")
+## contributors
+  ${data.contributors}
+## licenses
+${data.licenses}
+# Usage
+${data.usage}
+# contacts
+* github ${data.github}
+* linked in ${data.linkedin}
+* email ${data.email}`
         
       
     
